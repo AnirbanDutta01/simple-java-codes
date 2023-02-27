@@ -1,0 +1,16 @@
+class X implements Runnable{		//interface "implemented"
+					public void run(){
+										for(int i=0;i<=10;i++){
+															System.out.println("\tthreadX:"+i);
+										}
+										System.out.println("end of thread x");
+									}
+					}
+class RunnableTest{
+					public static void main(String[]args){
+						X runnable=new X();
+						Thread threadX=new Thread(runnable);
+						threadX.start();
+						System.out.println("end of main thread");
+					}
+				}

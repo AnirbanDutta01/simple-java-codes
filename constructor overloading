@@ -1,0 +1,37 @@
+class Box{
+			double height;
+			double width;
+			double depth;
+			
+			Box(double h,double w,double d){
+											  height=h;
+											  width=w;
+											  depth=d;
+											}
+						Box(){							//overloading constructor
+								height=-1;
+								width=-1;
+								depth=-1;
+							}
+						Box(double len){
+										height=width=depth;
+						}
+						double volume(){
+									return height*width*depth;
+										}
+		}
+class Overloadcons{
+						public static void main(String[]args){
+									Box mybox1=new Box(10,20,30);
+									Box mybox2=new Box();
+									Box mybox3=new Box(10,10,10);
+									double vol;
+									vol=mybox1.volume();
+									System.out.println("volume of the first box " +vol);
+									vol=mybox2.volume();
+									System.out.println("volume of the second box " +vol);
+									vol=mybox3.volume();
+									System.out.println("volume of the cube box " +vol);
+									
+						}
+				   }

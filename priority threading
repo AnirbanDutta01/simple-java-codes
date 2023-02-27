@@ -1,0 +1,44 @@
+class A extends Thread{
+						public void run(){							
+								System.out.println("threadA started");	
+							for(int i=1;i<5;i++){								
+							System.out.println("\t from thread A:i=" +i);
+						}
+					System.out.println("exit from A");
+						}
+}
+class B extends Thread{
+						public void run(){
+										System.out.println("threadA started");
+							for(int j=1;j<5;j++){
+								System.out.println("\tfrom thread B:j="+j);
+							}
+							System.out.println("Exit from B");
+						}
+					}
+class C extends Thread{
+						public void run(){							
+								System.out.println("threadC started");	
+							for(int k=1;k<5;k++){								
+							System.out.println("\t from thread C:k=" +k);
+						}
+					System.out.println("exit from C ");
+					}
+}
+class ThreadPriority{
+					public static void main(String[]args){
+						A threadA=new A();//temporary object creation
+						B threadB=new B();//start is using run function...by default we have to name it run
+						C threadC=new C();
+						threadC.setPriority(Thread.MAX_PRIORITY);
+						threadB.setPriority(threadA.getPriority()+1);
+						threadA.setPriority(Thread.MIN_PRIORITY);
+						System.out.println("start thread A");
+						threadA.start();
+						System.out.println("start thread B");
+						threadB.start();
+						System.out.println("start thread C");
+						threadC.start();
+						System.out.println("end of main thread");
+					}
+				}

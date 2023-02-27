@@ -1,0 +1,48 @@
+//using parameterized constructor
+	/*class Box{
+		double width;
+		double height;
+		double depth;
+			
+			
+ double volume(){
+	 return width*height*depth;
+			}
+	}
+	class Boxdemo6{
+					public static void main(String[]args){
+					Box mybox1=new Box(10,20,30);
+					Box mybox2=new Box(4,5,6);
+					double vol;
+					vol=mybox1.volume();
+					System.out.println("the volume of the first box is "+ vol);
+					vol=mybox2.volume();
+					System.out.println("the volume of the second box is "+ vol);
+					}
+				}*/class Box{
+		double width;//local variable
+		double height;
+		double depth;
+		Box(double width,double height,	double depth)//non static{
+this.width=w;//width instead of w when using this keyword//this is used to store local variable in non static variable
+this.height=h;//height instead of h
+this.depth=d;//depth instead of d
+		}
+			
+			
+ double volume(){
+	 return width*height*depth;
+			}
+	}
+	class Boxdemo6{
+					public static void main(String[]args){
+					Box mybox1=new Box(10,20,30);
+					Box mybox2=new Box(4,5,6);
+					double vol;
+					vol=mybox1.volume();
+					System.out.println("the volume of the first box is "+ vol);
+					vol=mybox2.volume();
+					System.out.println("the volume of the second box is "+ vol);
+					}
+				}		
+		

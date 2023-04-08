@@ -1,0 +1,31 @@
+//copying bytes from one file to another file
+import java.util.*;
+class copybytes{
+	public static void main(String[]args){
+		FileInputStream infile=null;	//object reference
+		FileOutputStream outfile=null;
+		byte byteRead;	//byteread is the variable
+		try{
+			infile=new FileInputStream("in.dat");
+			outfile=new FileOutputStream("out.dat");
+			do{
+				byteRead=(byte) infile.read();	//typecasting to byte
+				outfile.write(byteRead);
+			}
+			while(byteRead!=-1);
+		}
+		catch(FileNotFoundException e){
+			System.out.println("file not found");
+		}
+		catch(IOException e){
+			System.out.println(e.getMessage());
+		}
+		finally{
+			try{
+				infile.close();
+				outfile.close();
+			}
+			catch(IOException e){}
+		}
+	}
+}
